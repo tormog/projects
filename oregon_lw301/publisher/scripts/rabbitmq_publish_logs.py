@@ -9,7 +9,7 @@ parser.add_argument('--port', default=25672, type=int, help='Port to rabbitmq')
 parser.add_argument('--queue', default='es', help='Queuename to publish to')
 args = parser.parse_args()
 
-print args.port
+print "Publishing to host:%s port:%s queue:%s" % (args.host,args.port,args.queue)
 
 connection = pika.BlockingConnection(pika.ConnectionParameters(
         host=args.host,port=args.port))
